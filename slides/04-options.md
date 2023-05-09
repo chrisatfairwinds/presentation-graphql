@@ -1,48 +1,13 @@
-# Options
+# Quick Anecdotes
 
-## Proprietary (SaaS only)
+## Origins
 
-- LaunchDarkly
-- Split.io
-- AWS AppConfig
-- Firebase RemoteConfig
-- DevCycle
+Apollo created by Meteor.js
 
-## Open Source (Docker-based or SaaS)
+Evan You worked on the project before Vue took off
 
-- Unleash
-- GrowthBook
-- Flagsmith
-- Flipt
-- FeatureHub
+## Twitch.tv
 
-## Client Based (Just Remote JSON):
+Refactored from Ember to React in about 2017(?)
 
-Vexilla (mine) also Open Source (MIT)
-
-Very simple
-
-- Toggles
-- Gradual rollout
-
-## Vexilla (Clients)
-
-Clients in many languages (hand-written):
-
-- JS/TS
-- Elixir
-- PHP
-- Python
-- C#
-- Go
-- Rust
-- Ruby
-- lua
-- Dart
-
-## Vexilla (Cons)
-
-- does not currently consider value based flags (pricing, etc). only cares about boolean "should"
-- no realtime listening (polling is typically fine if its just a json file)
-- ugly config UI (its on the TODO board)
-- Very Unopinionated
+Reduced 70+ http requests down to 2

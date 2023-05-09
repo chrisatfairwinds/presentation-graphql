@@ -1,19 +1,63 @@
 # What?
 
-## Popular Usage
+## An RPC framework
 
-Used in many popular apps and websites.
+Made by Facebook in 2015
 
-- Web Browsers (chrome://flags)
-- Twitch
-- Github (Experimental) and https://github.blog/2021-04-27-ship-code-faster-safer-feature-flags/
-- Twitter
-- Facebook
-- YouTube
+## Basics
 
-## Use-cases
+- Single endpoint (POST)
+- Aggregates "leaf nodes"
+    - SQL
+    - NoSQL
+    - External APIs
+- Unique Query Syntax
 
-- UI Changes (layout, verbiage/copy)
-- Payment Providers (enabling/disabling)
-- Gradual Rollouts (rolling out to portions of your user base at a time)
-- Single source of truth for pricing changes
+## Features: Type System
+
+strings, numbers, and IDs
+
+```graphql
+type Query {
+  currentUser: User
+}
+
+type User {
+  id: ID!
+  name: String!
+}
+```
+
+## Features: Queries
+
+```graphql
+query CurrentUser {
+  currentUser {
+    name
+  }
+}
+```
+
+## Features: Mutations
+
+```graphql
+mutation CreateUser($name: String!, $age: Int!) {
+  createUser(userName: $name, age: $age) {
+    name
+    age
+  }
+}
+```
+
+## Features: Subscriptions
+
+In spec but Client/Server implementation specific
+
+```
+subscription {
+  newPerson {
+    name
+    age
+  }
+}
+```

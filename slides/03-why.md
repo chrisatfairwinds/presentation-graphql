@@ -1,28 +1,24 @@
-# Why Remote Flags?
+# Why?
 
-## Time
+## Data over the wire
 
-Deployment to production often takes a long time.
-
-## Time: Best Case - Continuous Delivery
-
-Projects can take upwards of 20 to 30 minutes to build and test. (not uncommon)
-
-PER ENVIRONMENT
+Select only fields you want
 
 <div class="notes">
-envs:
-- dev: PR review and merging + build
-- staging: build + QA
-- production
-
-60 to 90 minutes for a release
-
+odata has had this for a long time but odata is very slow and relies on the url which has a max length
 </div>
 
-## Time: Worst Case - Mobile Apps
+## Amount of requests
 
-Getting an update deployed can easily take a week
+Aggregate requests into 1
 
-- Review Process (1 Day commonly)
-- Possible Changes
+Does HTTP2 solve this?
+
+## Why not?
+
+- N+1 queries
+- Caching gets tricky
+
+<div class="notes">
+Caching gets handled by clients/servers like Apollo instead of the Browser
+</div>
