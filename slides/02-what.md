@@ -53,7 +53,7 @@ mutation CreateUser($name: String!, $age: Int!) {
 
 In spec but Client/Server implementation specific
 
-```
+```graphql
 subscription {
   newPerson {
     name
